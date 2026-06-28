@@ -51,7 +51,7 @@ export function useBookmarks(user: User | null) {
         setLoading(false)
 
         const toSync = [...local].filter(n => !remote.has(n))
-        if (toSync.length > 0) {
+        if (toSync.length > 0 && supabase) {
           supabase
             .from('user_favorites')
             .upsert(toSync.map(repository => ({ user_id: user.id, repository })))

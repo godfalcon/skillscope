@@ -62,7 +62,7 @@ export function TopicsPage({ data, searchQuery, onSelectSkill }: Props) {
 
       {/* Top 6 topic cards - 3 columns */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-        {data.topics.slice(0, 6).map((t, i) => {
+        {data.topics.slice(0, 6).map((t) => {
           const isActive = selectedTopic === t.name
           return (
             <button
